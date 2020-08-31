@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>CSS Selectors</title>
+  <style>
+    /* Class naming conventions - if i want to give to some heading a name i have to think which type this heading and not the name of the property that it's contain
+for example: for primary heading i want them to be greed so the name of the class that its implements is not "greed-heading" but "primary-heading" 
+is a good choice */
+    body {
+      background-color: #333;
+    }
+
+    .primary-heading {
+      color: blue;
+    }
+
+    #welcome {
+      background-color: #f4f4f4;
+    }
+
+    #about {
+      color: white;
+    }
+
+    /* multiple selectors */
+    /* Apply styling on multiple selectors */
+    #welcome,
+    #about {
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin-bottom: 5px;
+    }
+
+    /* Nested selector */
+    /* this mean: apply styling on paragraphs that is inside the element with id-"welcome"  */
+    #welcome p {
+      font-size: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="welcome">
+    <h2 class="primary-heading">Welcome</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium id explicabo non nobis. Voluptatum,
+      temporibus quas! Delectus ipsum saepe ab, at alias consequatur dolorem tenetur nisi iusto odio libero illo.</p>
+  </div>
+  <div id="about">
+    <h2 class="primary-heading">Hello</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore tempora tempore libero suscipit quae quod veniam
+      numquam, exercitationem sapiente quisquam accusantium vitae facere repellat maiores provident possimus odit earum!
+      Ab.</p>
+  </div>
+</body>
+
+</html>

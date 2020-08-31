@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Inline & Block Styling</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      /* li is a BLOCK LEVEL element, its says what each li, requires all the width of the page and no other elements can be with it the the same line */
+      /* we can change it manually to be inline as follow: */
+      li {
+        display: inline;
+      }
+
+      li a {
+        padding-right: 20px;
+      }
+
+      /* let's say that we want to centering the img,
+          so we want to make the margin to be auto, if we will do ONLY margin:auto; its not enough because 
+          ~~~~~~    WE CANT APPLY MARGINS AND WIDTH ON INLINE ELEMENTS    ~~~~~~
+          to apply margin on inline element we need to inverse it to block element */
+      img {
+        display: block;
+        margin: auto;
+      }
+
+      .box {
+        width: 32%;
+        /* if we want a three boxes to "sit" near each other in the same line, 
+        we must specify the width of each because we don't want the boxes to be in the width of all the page's-width,
+        we also want to define the box to be inline because we want three on the same line,
+        BUT remember: that we can't apply margin AND width on inline element
+        that's why we have: INLINE-BLOCK element, it allows us to define margin and width to box as block level element 
+        and it allows us to position boxes inline */
+        display: inline-block;
+        background: #f4f4f4;
+        border: 1px solid #333;
+        padding: 20px;
+        margin-bottom: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li><a href="#">Technology</a></li>
+      <li><a href="#">Business</a></li>
+      <li><a href="#">Fashion</a></li>
+    </ul>
+
+    <br /><br />
+
+    <!-- img is an inline element -->
+    <img src="/img/leaf.png" alt="leaf" />
+
+    <br /><br />
+
+    <div class="box">
+      <h3>Heading 1</h3>
+      <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt ab
+        accusamus ad placeat a. Dicta, voluptatem porro quam aspernatur
+        provident.
+      </p>
+    </div>
+    <div class="box">
+      <h3>Heading 1</h3>
+      <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt ab
+        accusamus ad placeat a. Dicta, voluptatem porro quam aspernatur
+        provident.
+      </p>
+    </div>
+    <div class="box">
+      <h3>Heading 1</h3>
+      <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt ab
+        accusamus ad placeat a. Dicta, voluptatem porro quam aspernatur
+        provident.
+      </p>
+    </div>
+  </body>
+</html>

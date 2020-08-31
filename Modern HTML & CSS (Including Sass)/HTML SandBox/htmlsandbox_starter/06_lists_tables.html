@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Lists & Tables</title>
+</head>
+
+<body>
+
+  <!-- Unorderd List -->
+  <ul>
+    <li>item 1</li>
+    <li>item 2</li>
+    <li>item 3</li>
+    <li>item 4</li>
+  </ul>
+
+  <!-- ordered List -->
+  <!-- types of the list specify how the list should be ordered: the default is type="1" -->
+  <ol type="i">
+    <li>item 1</li>
+    <li>item 2</li>
+    <li>item 3</li>
+    <li>item 4</li>
+  </ol>
+
+  <!-- Nested Lists -->
+  <ol type="i">
+    <li>item 1</li>
+    <li>item 2:
+      <ul>
+        <li>item 1</li>
+        <li>item 2</li>
+        <li>item 3</li>
+        <li>item 4</li>
+      </ul>
+    </li>
+    <li>item 3</li>
+    <li>item 4</li>
+  </ol>
+
+  <!-- Tables -->
+  <!-- We use tables for tabular data and not for UI
+  Back in the days developers used tables for creating layout but when we have css we don't need it
+so we use tables only for displaying data in table like users table -->
+
+<table>
+  <thead>
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Email</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>Tomer</td>
+      <td>Arzuan</td>
+      <td>TomerArzu@gmail.com</td>
+    </tr>
+  </tbody>
+</table>
+
+</body>
+
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Box Model / Margin & Padding</title>
+    <style>
+      /* how to distinct between padding and margin: 
+      margin - the outside of the border
+      padding the inside of the border*/
+      .box {
+        background: #ccc;
+        border: 2px #777 solid;
+        width: 500px;
+
+        /* padding all sides */
+        /* when i add the padding to the element its added in addition to the current width
+        so id we have width of 500px and padding of 20px its total width is:500+(20+20)=520px (for each side wi have 20 px)
+
+        -- box-sizing:border-box
+        we don't want to change the width because of the padding (or margin)- we want to keep the padding and the width as we defined
+        so to do that: we need to add ~box-sizing:border-box;~ to all of our elements
+        when i add this property its compute the right padding to add */
+        padding: 20px;
+
+        /* padding per side */
+        /* clockwise starting from top (top, right, bottom, left)*/
+        padding: 10px 20px 10px 20px;
+        /* The same when we have two values: (top&button, left&right) */
+        padding: 10px 20px;
+
+        /* Margin all sides */
+        margin: 10px 20px;
+      }
+
+      /* CSS Reset */
+      /* the asterisk (*) is for selecting every thing on the page even the default user agent styling */
+      /* when I do the follow i'm doing rest to all the pre-defined margins and paddings */
+      /* Its ok to do its in a certain cases depend on the layout 
+      when I'm doing it i must give an margin and padding to all the elements that i want to put on my page */
+      * {
+        margin: 0;
+        padding: 0;
+        /* box-sizing: border-box; this property helps up to keep the value of the width and height (of whole box) as we defined
+            for example: if we defined the width to be 500px and added padding and margin, the width will be no more 500px -
+            it will be 500+margin+padding - in order to keep the box 500px, no matter if we have padding or margin, we will give the property as follow: */
+        box-sizing: border-box;
+        /* !important: by default - box-sizing behavior is content-box - If you set an element's width to 100 pixels, then the element's content box will be 100 pixels wide, and the width of any border or padding will be added to the final rendered width, making the element wider than 100px. (MDN)  */
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="box">
+      <h3>Box One</h3>
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil nam
+        obcaecati accusamus facere ipsum molestiae minus praesentium libero aut!
+        Repellat.
+      </p>
+    </div>
+    <div class="box">
+      <h3>Box Two</h3>
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil nam
+        obcaecati accusamus facere ipsum molestiae minus praesentium libero aut!
+        Repellat.
+      </p>
+    </div>
+  </body>
+</html>
