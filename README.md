@@ -1,2 +1,4 @@
-# Modern-HTML-CSS-Including-Sass-
-Course
+Web Development
+HTML
+CSS + Sass
+JS
