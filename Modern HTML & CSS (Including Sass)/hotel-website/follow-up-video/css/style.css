@@ -98,6 +98,8 @@ p {
   background: #333;
   color: #fff;
   overflow: auto;
+  position: sticky;
+  top: 0;
 }
 
 #navbar a {
