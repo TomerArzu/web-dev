@@ -89,8 +89,24 @@ p {
   padding-bottom: 10px;
 }
 
-.clr{
+.clr {
   clear: both;
+}
+
+/* py its useful CSS classes for padding in the vertical axis - stands for padding y-axis 
+    usually we will do some py classes 'cause its nice to have */
+.py-1 {
+  padding: 10px 0;
+}
+.py-2 {
+  padding: 20px 0;
+}
+.py-3 {
+  padding: 30px 0;
+}
+
+.lg-heading {
+  font-size: 40px;
 }
 
 /* Navbar */
@@ -182,7 +198,6 @@ p {
 
 /* Features */
 
-
 #features .box.bg-primary {
   border-left: 1px solid #333;
   border-right: 1px solid #fff;
@@ -194,4 +209,54 @@ p {
   background: #444;
   color: #fff;
   padding: 20px;
+}
+
+/* about.html */
+
+/* About Info Section */
+#about-info .info-right {
+  float: right;
+  width: 50%;
+  min-height: 100%;
+}
+
+#about-info .info-right img {
+  display: block;
+  margin: auto;
+  width: 70%;
+  border-radius: 50%;
+}
+
+#about-info .info-left {
+  float: left;
+  width: 50%;
+  min-height: 100%;
+}
+
+/* Testimonials Section */
+#testimonials {
+  height: 600px;
+  background: url("../img/test-bg.jpg") no-repeat center center/cover;
+  padding-top: 100px;
+}
+
+#testimonials h2 {
+  color: #fff;
+  text-align: center;
+  padding-bottom: 40px;
+}
+
+#testimonials .testimonial {
+  padding: 20px;
+  margin-bottom: 40px;
+  border-radius: 5px;
+  /* OPACITY - make the element transparent in some value */
+  opacity: 0.8;
+}
+
+#testimonials .testimonial img {
+  width: 100px;
+  float: left;
+  margin-right: 20px;
+  border-radius: 50%;
 }
