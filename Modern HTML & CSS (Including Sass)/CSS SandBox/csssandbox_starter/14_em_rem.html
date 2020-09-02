@@ -1,14 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Em & Rem Units</title>
-  <style>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Em & Rem Units</title>
+    <style>
+      
+      /* To understand why we prefer em over rem, uncomment the lines we "$$$" signs */
 
-  </style>
-</head>
-<body>
-</body>
+      /* #box-1 {
+        font-size: 20px;
+      } $$$ */
+
+      /* #box-1 p {  $$$ */
+      /* when i define font size of parent element (div of #box-1)
+        and then i define font-size of child in terms of em the size of the element will be affected from the parent */
+      /* In this case: parent=20px, child=1.5em => child calculated: 20*1.5 = 30px */
+      /* font-size: 1.5em; $$$  */
+      /* The reason to not use em: 
+        lets define padding to the paragraph element with size of 1em,
+        at the first look we might think that padding size will be 1em=20px,
+        but the padding is infected by the order of CSS which mean that our font size is the parent for padding (by default in p elements) so it know that
+        the actual size is 1em=30px */
+      /* padding: 1em;
+      }  $$$  */
+
+      /* another good example to "do not use em's" : */
+      /* when i have two nested <ul> elements the font-size of the inner list infected by the font size of the outer list
+        and this can cause us the damage in the font sizes where the inner list will be bigger then the outer one */
+      /* #box-1 ul{
+        font-size: 1.2em;
+      }  $$$  */
+
+
+      /* The use of REM */
+
+      /* if we want to change the root HTML font size: */
+      /* its a common configuration because its easier to calculate the actual size using rem */
+      /* to make in responsivier, we can set the font size to be 62.5% from the original font-size (which is also 10px calculated) */
+      html{
+        font-size: 10px; 
+        font-size: 62.5%; /* also 10px */
+      }
+
+      /* if we set 2rem to the h3 element we can see that the calculate font-size is 32, because: the default HTML root size is 16px * 2rem = 32px */
+      #box-2 h3{
+        font-size: 2rem;
+      }
+
+      /* after applying for size on h3 (parent element of p) we will apply this font size and we will see that now the calculated font size
+          didn't affected for its parent which mean that the p calculated font-size is 1.6rem*16px = 25.6px */
+      #box-2 p{
+        font-size: 1.6rem;
+      }
+
+
+    </style>
+  </head>
+  <body>
+    <!-- REM -  Relative Element Multiplayer: 
+                Relative to the font size of the root HTML element - The default is 16px -->
+    <div id="box-1">
+      <h3>Box One</h3>
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minima totam
+        autem aspernatur accusantium quam reiciendis ad consequuntur ut est
+        exercitationem?
+      </p>
+      <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <ul>
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+        </ul>
+        <li>4</li>
+      </ul>
+    </div>
+    <div id="box-2">
+      <h3>Box Two</h3>
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minima totam
+        autem aspernatur accusantium quam reiciendis ad consequuntur ut est
+        exercitationem?
+      </p>
+    </div>
+  </body>
 </html>
