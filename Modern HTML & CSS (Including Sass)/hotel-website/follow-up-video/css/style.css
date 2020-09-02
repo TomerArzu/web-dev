@@ -200,16 +200,10 @@ p {
 
 #features .box.bg-primary {
   border-left: 1px solid #333;
-  border-right: 1px solid #fff;
+  border-right: 1px solid #333;
 }
 
-/* Main Footer */
-#main-footer {
-  text-align: center;
-  background: #444;
-  color: #fff;
-  padding: 20px;
-}
+
 
 /* about.html */
 
@@ -259,4 +253,45 @@ p {
   float: left;
   margin-right: 20px;
   border-radius: 50%;
+}
+
+/* Contact.html */
+#contact-form{
+  margin: 30px 0;
+}
+#contact-form .form-group{
+  margin-bottom: 20px;
+}
+
+#contact-form label{
+  display: block;
+  margin-bottom: 5px;
+}
+
+#contact-form input,
+#contact-form textarea{
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+#contact-form textarea{
+  height: 200px;
+  margin-bottom: 20px;
+}
+
+/* occurs i click (put the cursor in the text area */
+#contact-form input:focus,
+#contact-form textarea:focus{
+  outline:none;
+  border-color: #f7c08a;
+}
+
+/* Main Footer */
+#main-footer {
+  text-align: center;
+  background: #444;
+  color: #fff;
+  padding: 20px;
 }
