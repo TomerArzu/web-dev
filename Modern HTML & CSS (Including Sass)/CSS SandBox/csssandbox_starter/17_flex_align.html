@@ -1,15 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Flex Align</title>
-  <style>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Flex Basics</title>
+    <style>
+      *{
+        box-sizing: content-box;
+      }
 
-  </style>
-</head>
-<body>
+      body{
+        font-family: Arial, Helvetica, sans-serif;
+      }
 
-</body>
+      .flex-container{
+        display: flex;
+        flex-direction:row;
+        background: #f4f4f4;
+        height: 50vh;
+        /* alignment of items in flex box done with the property: align-items.
+            the items can be aligned to the center,start or end of the container depend of its height.
+          but we have two cases: row and col flex-direction: 
+            - for col (alignment done on the cross axis): end and start is right and left correspond and center is simply center
+            - for row (alignment done on the main axis): end and start is bottom and top correspond and center is still center */
+        align-items: center;
+        /* in the start/center/end line/col we can define where we want to see the element,
+            we can justify it's content to some start/center/end position as follow: */
+        justify-content: center;
+        /* distribute the spaces that left between items */
+        /* justify-content: space-around; */
+      }
+
+      .item{
+        background:#f4f4f4;
+        border: 1px solid #ccc;
+        margin: 10px;
+        padding: 10px;
+        text-align: center;
+        border-radius: 10px;
+      }
+
+      .item-1{
+        /* we can move items individually in the flex box */
+        align-self: flex-start;
+      }
+
+      .item-2{
+        align-self: center;
+      }
+
+      .item-3{
+        align-self: flex-end;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="flex-container">
+      <!-- each one of the next divs is flex item -->
+      <div class="item item-1">
+        <h1>Item 1</h1>
+      </div>
+      <div class="item item-2">
+        <h1>Item 2</h1>
+      </div>
+      <div class="item item-3">
+        <h1>Item 3</h1>
+      </div>
+    </div>
+  </body>
 </html>
