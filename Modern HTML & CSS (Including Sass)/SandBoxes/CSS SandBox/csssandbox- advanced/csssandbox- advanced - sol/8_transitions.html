@@ -6,6 +6,35 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Transitions</title>
     <style>
+      body {
+        background: #333;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+      }
+
+      .box {
+        background: white;
+        width: 100px;
+        height: 100px;
+        /* transition-property: background, border-radius height width */
+        /* transition-property: all;
+        transition-duration: 1s;
+        transition-timing-function: ease-in; */
+        /* transition-delay: 2s, 4s; */
+
+        /* Shorthand - property/duration/timing-function/delay */
+        transition: all 1s ease-in-out;
+      }
+
+      .box:hover {
+        background: red;
+        border-radius: 50%;
+        height: 300px;
+        width: 300px;
+      }
+
       /* 
         TRANSITIONAL PROPERTIES
         -Properties that have an identifiable halfway point
