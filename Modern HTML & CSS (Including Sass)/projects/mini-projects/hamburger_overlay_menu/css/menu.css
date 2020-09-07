@@ -2,9 +2,13 @@
   position: fixed;
   top: 0;
   left: 0;
+  /* we want the menu to be on top always */
   z-index: 1;
 }
 
+/* toggler is the actual checkbox */
+/* the checkbox is going to sit on top of the hamburger class
+  and we also want the CB to be invisible */
 .menu-wrap .toggler {
   position: absolute;
   top: 0;
@@ -16,6 +20,7 @@
   opacity: 0;
 }
 
+/* the next class is for the design of the hamburger button and NOT the button */
 .menu-wrap .hamburger {
   position: absolute;
   top: 0;
@@ -25,6 +30,7 @@
   height: 60px;
   padding: 1rem;
   background: var(--primary-color);
+  /* the next is for the div inside (the lines) */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -32,6 +38,7 @@
 
 /* Hamburger Line */
 .menu-wrap .hamburger > div {
+  /* its relative because we want to position elements inside it */
   position: relative;
   flex: none;
   width: 100%;
@@ -40,32 +47,46 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
+  /* apply animation for the X of the hamburger button */
   transition: all 0.4s ease;
 }
 
 /* Hamburger Lines - Top & Bottom */
 .menu-wrap .hamburger > div::before,
 .menu-wrap .hamburger > div::after {
-  content: '';
+  content: "";
+  /* absolute to the relative Hamburger Line */
   position: absolute;
   z-index: 1;
   top: -10px;
   width: 100%;
   height: 2px;
+  /* the background of the parent (#fff) */
   background: inherit;
 }
 
 /* Moves Line Down */
+/* we override the "top:10;" property of the above class 
+  so we need to decrease the height of the bottom line */
 .menu-wrap .hamburger > div::after {
   top: 10px;
 }
 
+/* NOTICE! the combination of + operator with l-value that is a 
+state and r-value that is an element creates a condition */
+
 /* Toggler Animation */
+/* when the CB is checked we target the div inside the hamburger element
+    and rotate all the three lines 135degrees */
 .menu-wrap .toggler:checked + .hamburger > div {
   transform: rotate(135deg);
 }
 
+/* we need to target all three lines inside when the checkbox is checked */
 /* Turns Lines Into X */
+/* we make the two line as one line (with top:0)
+and rotate the 90deg to the opposite side to the div line */
 .menu-wrap .toggler:checked + .hamburger > div:before,
 .menu-wrap .toggler:checked + .hamburger > div:after {
   top: 0;
@@ -77,19 +98,25 @@
   transform: rotate(225deg);
 }
 
+/* the ~ tilde operator - former_element ~ target_element
+  search ALL for the target_element from former_element downwards (in equal level or inner) */
+
 /* Show Menu */
+/* when the CB is checked we search for the menu and make it visible */
 .menu-wrap .toggler:checked ~ .menu {
   visibility: visible;
 }
 
+/* because we scale down the inner div we need to scale it up */
 .menu-wrap .toggler:checked ~ .menu > div {
   transform: scale(1);
   transition-duration: var(--menu-speed);
 }
 
+/* make the menu itself (the ul element) visible with opacity */
 .menu-wrap .toggler:checked ~ .menu > div > div {
   opacity: 1;
-  transition:  opacity 0.4s ease 0.4s;
+  transition: opacity 0.4s ease 0.4s;
 }
 
 .menu-wrap .menu {
@@ -98,23 +125,38 @@
   left: 0;
   width: 100%;
   height: 100%;
+
+  /* Closing (or initial) the menu */
+  /* the menu is hidden as default */
   visibility: hidden;
   overflow: hidden;
+  /* for the menu overlay that will open in the  middle */
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
+/* to create fade gray overlay */
 .menu-wrap .menu > div {
   background: var(--overlay-color);
   border-radius: 50%;
+  /* we want to open the menu in a circle way,
+  actually the menu is circle but we don't see it because its over our viewport 
+  if we try to put 100 vw we can see that the circle touches all the page left and right edges
+  (width edges)  */
   width: 200vw;
   height: 200vw;
   display: flex;
+  /* if there wasn't flex:none; the menu was bounded to the window size */
   flex: none;
   align-items: center;
   justify-content: center;
+
+  /* Closing (or initial) the menu */
+  /* the scale(0) make the items inside the div to be in size of zero
+  because we multiply their size with zero */
   transform: scale(0);
+  /* transition is apply to the above transform */
   transition: all 0.4s ease;
 }
 
@@ -122,6 +164,10 @@
   text-align: center;
   max-width: 90vw;
   max-height: 100vh;
+
+  /* Closing (or initial) the menu */
+  /* we want to open the menu list with no opacity and then
+    change it to 1 opacity */
   opacity: 0;
   transition: opacity 0.4s ease;
 }
@@ -136,6 +182,7 @@
 .menu-wrap .menu > div > div > ul > li > a {
   color: inherit;
   text-decoration: none;
+  /* for the hover changing color */
   transition: color 0.4s ease;
 }
 

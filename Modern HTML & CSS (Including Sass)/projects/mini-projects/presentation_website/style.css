@@ -12,14 +12,23 @@ body {
   color: #fff;
   margin: 0;
   padding: 0;
+  /* if we don't want scroll bars to show at all we need to hidden the overflow */
   overflow: hidden;
 }
 
 /* Page Colors */
-#page-1 { background: var(--page-1-color) }
-#page-2 { background: var(--page-2-color) }
-#page-3 { background: var(--page-3-color) }
-#page-4 { background: var(--page-4-color) }
+#page-1 {
+  background: var(--page-1-color);
+}
+#page-2 {
+  background: var(--page-2-color);
+}
+#page-3 {
+  background: var(--page-3-color);
+}
+#page-4 {
+  background: var(--page-4-color);
+}
 
 .page {
   display: flex;
@@ -66,12 +75,14 @@ body {
 
 /* Page Animation */
 #page-1 h1 {
+  /* we initially position the header out of the screen and in the animation we make it come to its initial place (0) */
   transform: translateY(-1200px);
   animation: heading var(--animate-speed) forwards ease-in;
 }
 
 #page-1 p {
   transform: translateX(-1800px);
+  /* we added delay because we want the header come first and then the paragraph later */
   animation: text var(--animate-speed) forwards ease-in 1s;
 }
 
