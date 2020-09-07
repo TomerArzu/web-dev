@@ -5,7 +5,101 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>CSS Variables</title>
-    <style></style>
+    <style>
+      /* to define variable we have to consider scopes,
+      which mean that it i define a color variable is the body element we can use the variable only in the body selector
+      because other selector don't know the var
+      there is a root element that its like a global scope that every element know it. its the HTML root element
+      and we specify it as follow: */
+      :root {
+        /* to define variable we do "--[var-name]" */
+        /* for example: we create a variable that holds some color that we can use in the body element */
+        --light-color: #f4f4f4;
+
+        /* the COMMON uses for variable is for colors: */
+        --primary-color: steelblue;
+        --secondary-color: skyblue;
+        --light-text: #fff;
+        --max-width: 1100x;
+
+        /* NOTICE */
+        /* The two next var will be in use only for boxes with box class so we don't need them here
+        we can move the to .box class */
+        /* --box-1-width: 1;
+        --box-2-width: 2; */
+      }
+
+      .box {
+        --box-1-width: 3;
+        --box-2-width: 1;
+      }
+
+      * {
+        padding: 0;
+        margin: 0;
+      }
+
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        line-height: 1.4;
+        /* background: #f4f4f4; */
+
+        /* to use the defined variable we can do as follow: */
+        background: var(--light-color);
+      }
+
+      header {
+        background-color: var(--primary-color);
+        border-bottom: 5px solid var(--secondary-color);
+        color: var(--light-text);
+        text-align: center;
+      }
+
+      .container {
+        display: flex;
+        margin: auto;
+        /* it also useful to make the max-width value as variable because when we change the width of the website (for some reason)
+        we need to apply it only on one place */
+        max-width: var(--max-width);
+      }
+
+      .box {
+        background-color: var(--primary-color);
+        border-bottom: 5px solid var(--secondary-color);
+        color: var(--light-text);
+        padding: 1rem;
+        margin: 1rem;
+      }
+
+      .box-1 {
+        flex: var(--box-1-width);
+      }
+
+      .box-2 {
+        flex: var(--box-2-width);
+      }
+    </style>
   </head>
-  <body></body>
+  <body>
+    <header><h1>CSS Variables</h1></header>
+
+    <div class="container">
+      <div class="box box-1">
+        <h1>Hello World</h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor quod
+          ullam necessitatibus itaque quisquam incidunt obcaecati temporibus
+          sint nulla exercitationem.
+        </p>
+      </div>
+      <div class="box box-2">
+        <h1>Hello World</h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor quod
+          ullam necessitatibus itaque quisquam incidunt obcaecati temporibus
+          sint nulla exercitationem.
+        </p>
+      </div>
+    </div>
+  </body>
 </html>

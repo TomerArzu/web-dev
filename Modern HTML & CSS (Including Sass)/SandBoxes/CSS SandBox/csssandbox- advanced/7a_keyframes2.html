@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Keyframes</title>
+    <style>
+      body {
+        background: #333;
+      }
+
+      .box {
+        background: white;
+        width: 200px;
+        height: 200px;
+        position: relative;
+        top: 0;
+        left: 0;
+        /* shorthand writing */
+        animation: animate2 5s forwards ease-in-out;
+      }
+
+      /* we can set percentages that each point or animation duration something will happened 
+      */
+      @keyframes animate2 {
+        /* The next 25% is done at the 25% of the animation
+            because its not the complete state of the animation,
+            the "forward" fill-mode goes back to its initial state */
+        /* The next says: at the final of the first 25% of the animation, from the initial position, move 300px to the left and 0px top  */
+        25% {
+          top: 0;
+          left: 300px;
+          background-color: steelblue;
+          border-radius: 50% 0 0 0;
+          box-shadow: -3px 0px 10px 1px rgba(255, 255, 255, 0.3);
+        }
+        /* until the 50% the element animation must and at 300px to the top and 300px to the left */
+        50% {
+          top: 300px;
+          left: 300px;
+          background-color: chartreuse;
+          border-radius: 50% 0 50% 0;
+        }
+        /* until 75% of the animation the element should end at 300px to the top and 0px to the left */
+        75% {
+          top: 300px;
+          left: 0px;
+          background-color: chocolate;
+          border-radius: 50% 50% 50% 0;
+        }
+        /* and so on... */
+        100% {
+          top: 0;
+          left: 0;
+          border-radius: 50%;
+          box-shadow: 3px 3px 10px 1px rgba(255, 255, 255, 0.3);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box"></div>
+  </body>
+</html>

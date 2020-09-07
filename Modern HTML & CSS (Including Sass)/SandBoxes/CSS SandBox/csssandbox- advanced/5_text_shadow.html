@@ -5,7 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Text Shadow</title>
-    <style></style>
+    <style>
+      h1 {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 4rem;
+      }
+
+      .a {
+        /* h-shadow - horizontal | v-shadow -vertical | color */
+        text-shadow: 0.2rem 0.2rem steelblue;
+      }
+
+      .b {
+        /* h-shadow | v-shadow | blur | color */
+        text-shadow: 0.4rem 0.3rem 0.7rem steelblue;
+      }
+
+      .c {
+        /* White Text */
+        color: white;
+        text-shadow: 0.2rem 0.2rem 1rem steelblue;
+      }
+
+      .d {
+        /* Negetive Values */
+        text-shadow: -0.4rem -0.3rem 0.7rem steelblue;
+      }
+    </style>
   </head>
   <body>
     <h1 class="a">Welcome To My Course</h1>

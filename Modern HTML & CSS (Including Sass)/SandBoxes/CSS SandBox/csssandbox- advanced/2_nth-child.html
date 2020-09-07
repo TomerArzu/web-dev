@@ -5,7 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>nth-child</title>
-    <style></style>
+    <style>
+      li {
+        padding: 0.25rem;
+        margin: 0.25rem;
+        list-style: none;
+      }
+
+      /* in a list we can select the n-child */
+      /* First-child */
+      li:first-child {
+        background: red;
+      }
+
+      /* Lst child */
+      li:last-child {
+        background: green;
+        color: white;
+      }
+
+      /* child[3] */
+      li:nth-child(3) {
+        background: purple !important;
+        /* the !important prevent the overriding style that come ofter */
+      }
+
+      /* It important to notice that n can be an argument to the css selector,
+        where we can use it to specify some roles - its iterate over the list of the items:
+        for example: every even element (2n+0) or odd (2n+1) - we can specify the words "odd" and "even" instead
+        the following specify every third item (n%3==0) */
+      li:nth-child(3n + 0) {
+        background: orange;
+      }
+
+      /* every 3th starts from 7 offset is (3n+7) formula */
+      li:nth-child(3n + 0) {
+        background: yellowgreen;
+      }
+    </style>
   </head>
   <body>
     <ul>

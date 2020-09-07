@@ -5,7 +5,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>More Selectors</title>
-    <style></style>
+    <style>
+      /* Direct child */
+      /* the next css selector will select every p element that inside a div - 
+       no matter where the p in the div (in recursive way) */
+
+      /* div p {
+        background: #ddd;
+      } */
+
+      /* we can choose the ONLY direct p child of an div by '>' operator as follow: */
+      div > p {
+        background: #ddd;
+      }
+      /* in the above example the p inside the li element will be not affected because its parent is list item (li) and not div element */
+
+      /* Directly after */
+      /* First, the syntax is: [the element before]+[the element that will affect] 
+          in this cases, we can apply style of every element that come after some element (if we have some pattern in the HTML) 
+          - BUT NOT ON THE CHILD ELEMENTS - ONLY ELEMENTS ON THE SAME LEVEL */
+      /* for example: the following selector will apply style on every p element that comes after div element */
+      div + p {
+        background: #333;
+        color: #fff;
+      }
+
+      /* By attribute */
+      /* we can target selector by their attributes */
+      /* the following will select a element that have a target attribute */
+      a[target] {
+        background: red;
+        color: #fff;
+      }
+      /* By attribute value */
+      a[target="_self"] {
+        background: green;
+        color: #fff;
+      }
+      /* common use in forms */
+      input[type="text"],
+      input[type="email"] {
+        width: 100%;
+        margin-bottom: 5px;
+      }
+    </style>
   </head>
   <body>
     <div>
@@ -20,5 +63,17 @@
       <p>Lorem ipsum dolor sit amet.</p>
     </div>
     <p>Lorem ipsum dolor sit amet.</p>
+
+    <a href="#" target="_self">Page 1</a>
+    <a href="#">Page 2</a>
+    <a href="https://google.com" target="_blank">Google</a>
+
+    <br /><br />
+
+    <form>
+      <input type="text" placeholder="Name" />
+      <input type="email" placeholder="Email" />
+      <input type="submit" value="Submit" />
+    </form>
   </body>
 </html>

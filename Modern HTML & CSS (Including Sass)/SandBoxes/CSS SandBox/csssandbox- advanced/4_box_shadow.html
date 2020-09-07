@@ -5,7 +5,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Box Shadows</title>
-    <style></style>
+    <style>
+      .container {
+        display: flex;
+      }
+
+      .box {
+        padding: 1rem;
+        margin: 1rem;
+        background: coral;
+        color: white;
+
+        /* we can use different values here: */
+        /* offset-x | offset-y | color */
+        box-shadow: 10px 10px teal;
+
+        /* offset-x | offset-y | blur-radius - apply blur effect | color */
+        box-shadow: 10px 10px 20px teal;
+
+        /* Negative values - the default value appear in the right-down of the element,
+        the negative shows them on the left-up */
+        box-shadow: -5px 5px 20px teal;
+
+        /* The next is in common use: */
+        /* offset-x | offset-y | blur-radius | spread-radius - how far we want to spread | color */
+        /* note: rgba - a stands for alpha channel with is the opacity */
+        box-shadow: 3px 3px 10px 1px rgba(0, 0, 0, 0.3);
+
+        /* inset - the shadow from inside | offset-x | offset-y | color */
+        box-shadow: inset 3px 3px teal;
+
+        /* Multiple shadows - separated with comma */
+        box-shadow: 3px 3px 10px teal, -3px -3px olive;
+      }
+    </style>
   </head>
-  <body></body>
+  <body>
+    <div class="container">
+      <div class="box">
+        <h3>Heading</h3>
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit,
+          officiis!
+        </p>
+      </div>
+      <div class="box">
+        <h3>Heading</h3>
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit,
+          officiis!
+        </p>
+      </div>
+      <div class="box">
+        <h3>Heading</h3>
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit,
+          officiis!
+        </p>
+      </div>
+    </div>
+  </body>
 </html>

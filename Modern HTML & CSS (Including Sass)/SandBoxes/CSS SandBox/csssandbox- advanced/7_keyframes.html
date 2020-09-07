@@ -5,7 +5,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Keyframes</title>
-    <style></style>
+    <style>
+      body {
+        background: #333;
+      }
+
+      .box {
+        background: white;
+        width: 200px;
+        height: 200px;
+
+        position: relative;
+        /* we have bunch of different properties, we can combine them 
+          first we look at them one-by-one*/
+        animation-name: animate1;
+        animation-duration: 5s;
+        /* after creating the animate name and duration,
+          we need to create the animation keyframes them-self */
+
+        /* if we want the animation to be repeat we can specify the iteration-count */
+        animation-iteration-count: 2;
+        animation-iteration-count: infinite;
+        animation-iteration-count: 1;
+
+        /* if we want to end the animation the static display of the "to" properties 
+          we can set the fill-mode to forwards */
+        animation-fill-mode: forwards;
+
+        /* animation delay - the animation will stat X times after the page reload */
+        animation-delay: 2s;
+
+        /* we can make the animation start from the "to" to the "from" section we direction */
+        animation-direction: alternate-reverse;
+        /* alternate is the default */
+        animation-direction: alternate;
+
+        /* timing-function - specify the speed that the animation will be
+          for example: start fast and end slow or vise-versa */
+        animation-timing-function: ease-in-out;
+
+        /* shorter way to specify animations */
+        /* animation: name | duration | fill-mode | delay | timing-function */
+      }
+
+      /* the convention is @keyframes [identifier:animation-name]{...} */
+      /* the following animation, is in its duration time(2 second)
+        changes the width from 200px to 600px (happened once - when the page reload) */
+      @keyframes animate1 {
+        /* because we start from 200px anyway, we don't have to specify the "from" */
+        from {
+          width: 200px;
+          top: 0;
+        }
+        to {
+          width: 600px;
+          background-color: red;
+          top: 300px;
+        }
+      }
+    </style>
   </head>
   <body>
     <div class="box"></div>
