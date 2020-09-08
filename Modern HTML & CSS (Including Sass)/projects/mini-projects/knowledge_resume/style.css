@@ -11,9 +11,10 @@
 }
 
 body {
-  font: normal 1rem/1.5 'Arial', sans-serif;
+  font: normal 1rem/1.5 "Arial", sans-serif;
   background: var(--primary-color);
   color: #fff;
+  /* we don't want horizontal scroll bar */
   overflow-x: hidden;
   padding-bottom: 50px;
 }
@@ -39,6 +40,9 @@ h1 {
 }
 
 /* Create Line */
+/* the boxes that is come in beside, is in the div 
+thats why we put the li width 6px (for the line) */
+/* moreover, the relative position is because we want to position the div inside the li */
 #timeline ul li {
   list-style: none;
   position: relative;
@@ -49,12 +53,14 @@ h1 {
 }
 
 /* Boxes */
+/* we give the div a volume that will be display as box */
 #timeline ul li div {
   position: relative;
   bottom: 0;
   width: 400px;
   padding: 1rem;
   background: var(--secondary-color);
+  /* the trigger for the transition comes from JS */
   transition: all 0.5s ease-in-out;
   visibility: hidden;
   opacity: 0;
@@ -73,22 +79,26 @@ h1 {
 }
 
 /* Dots */
+/* the li is the line - so after each line mean that the dots will be in the bottom
+and because the line is positioned relative be have an absolute pos for each dot */
 #timeline ul li:after {
-  content: '';
+  content: "";
   position: absolute;
   left: 50%;
   bottom: 0;
   width: 25px;
   height: 25px;
   background: inherit;
+  /* we move 50% on the negative X-axis (right) because we moved 50% to the left earlier */
   transform: translateX(-50%);
   border-radius: 50%;
   transition: background 0.5s ease-in-out;
 }
 
 /* Arrows Base */
+/* we will manipulate the div's:before borders */
 #timeline div:before {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 5px;
   width: 0;
@@ -97,8 +107,10 @@ h1 {
 }
 
 /* Right Side Arrows */
+/* design the shape and the position of the div's:before borders */
 #timeline ul li:nth-child(odd) div:before {
   left: -15px;
+  /* create a triangle */
   border-width: 8px 16px 8px 0;
   border-color: transparent var(--secondary-color) transparent transparent;
 }
@@ -121,8 +133,7 @@ h1 {
   background: var(--secondary-color);
 }
 
-
-@media(max-width: 900px) {
+@media (max-width: 900px) {
   #timeline ul li div {
     width: 250px;
   }
@@ -132,7 +143,7 @@ h1 {
   }
 }
 
-@media(max-width: 600px) {
+@media (max-width: 600px) {
   #timeline ul li {
     margin-left: 20px;
   }
@@ -151,4 +162,3 @@ h1 {
     border-color: transparent var(--secondary-color) transparent transparent;
   }
 }
-
