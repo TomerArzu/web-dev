@@ -5,7 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Grid Columns</title>
-    <style></style>
+    <style>
+      .grid {
+        display: grid;
+        /* when we set display as grid, we must specify: grid template cols */
+        /* here we defined 3 cols, each row has 200px width */
+        /* if we define col as "auto" it will fill out the container while we scratch the browser */
+        grid-template-columns: 200px auto 200px;
+        grid-template-columns: repeat(3, auto);
+        /* the above line is equal to the next line */
+        /* grid-template-columns: auto auto auto; */
+
+        /* Grid Common Units - fr units (stands for fractions) -this units are responsive */
+        grid-template-columns: 1fr 2fr 1fr;
+
+        /* Grid Gap - define spacing between grid elements */
+        gap: 1rem;
+      }
+
+      .item {
+        padding: 3rem;
+        border: 1px solid #ccc;
+        background: #f4f4f4;
+        font-size: 1.3rem;
+        font-weight: bold;
+        text-align: center;
+      }
+
+      main {
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+        gap: 1.5rem;
+      }
+    </style>
   </head>
   <body>
     <div class="grid">
@@ -16,7 +48,6 @@
       <div class="item">Item 5</div>
       <div class="item">Item 6</div>
     </div>
-
     <main>
       <section>
         <h3>Welcome To My Site</h3>

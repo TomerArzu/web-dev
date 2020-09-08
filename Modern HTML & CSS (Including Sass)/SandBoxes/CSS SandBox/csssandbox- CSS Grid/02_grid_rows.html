@@ -5,7 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Grid Rows</title>
-    <style></style>
+    <style>
+      .grid {
+        display: grid;
+        /* when we define the rows like this,
+        this is implicit define of rows, here we define the size for the 3 first rows */
+        grid-template-rows: 1fr 2fr 3fr;
+        /* if we want to define size for all rows 
+        we can define: */
+        grid-auto-rows: 3fr;
+        /* Here we defined  first rows 1fr 2fr 3fr then, all other rows are 3fr */
+
+        /* we can use grid template row with grid template cols */
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .item {
+        padding: 3rem;
+        border: 1px solid #ccc;
+        background: #f4f4f4;
+        font-size: 1.3rem;
+        font-weight: bold;
+        text-align: center;
+      }
+    </style>
   </head>
   <body>
     <div class="grid">

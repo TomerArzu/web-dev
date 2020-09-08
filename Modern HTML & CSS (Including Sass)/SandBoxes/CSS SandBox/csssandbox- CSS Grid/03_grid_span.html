@@ -5,7 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Grid Span</title>
-    <style></style>
+    <style>
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      .item {
+        padding: 3rem;
+        border: 1px solid #ccc;
+        background: #f4f4f4;
+        font-size: 1.3rem;
+        font-weight: bold;
+        text-align: center;
+      }
+
+      .item:first-child {
+        /* when we change the following prop,
+        the grid location will start from col 2 */
+        grid-column-start: 2;
+        /* and we can define the item in the grid to end in the 4th index */
+        grid-column-end: 4;
+        /* equivalent to the two above lines */
+        /* the meaning : to take the item make it start from 1 and span it on 3 cols */
+        grid-column: 1 / span 3;
+
+        grid-row-start: 1;
+        grid-row-end: 3;
+        /* the same for rows */
+        grid-row: 1 / span 2;
+      }
+    </style>
   </head>
   <body>
     <div class="grid">

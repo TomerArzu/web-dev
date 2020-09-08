@@ -5,7 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Grid Basics</title>
-    <style></style>
+    <style>
+      .grid {
+        display: grid;
+        /* its a responsive layout that fits the number of items in each row */
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      }
+
+      .item {
+        padding: 3rem;
+        border: 1px solid #ccc;
+        background: #f4f4f4;
+        font-size: 1.3rem;
+        font-weight: bold;
+        text-align: center;
+      }
+    </style>
   </head>
   <body>
     <div class="grid">
