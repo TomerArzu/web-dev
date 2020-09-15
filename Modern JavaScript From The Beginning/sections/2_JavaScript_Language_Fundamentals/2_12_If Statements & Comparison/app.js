@@ -79,23 +79,26 @@ if (color === "red") {
 const name = "Steve";
 const age = 70;
 
-// AND &&
+// ? AND &&
 if (age > 0 && age < 12) {
   console.log(`${name} is a child`);
 } else if (age >= 13 && age <= 19) {
   console.log(`${name} is a teenager`);
+} else if (age >= 20 && age <= 90) {
+  console.log(`${name} is a adult`);
 } else {
-  console.log(`${name} is an adult`);
+  console.log(`${name} is an old`);
 }
 
-// OR ||
+// ? OR ||
 if (age < 16 || age > 65) {
   console.log(`${name} can not run in race`);
 } else {
   console.log(`${name} is registered for the race`);
 }
 
-// TERNARY OPERATOR
+// ? TERNARY OPERATOR
+// ** [condition] ? true:false
 console.log(id === 100 ? "CORRECT" : "INCORRECT");
 
 // WITHOUT BRACES
