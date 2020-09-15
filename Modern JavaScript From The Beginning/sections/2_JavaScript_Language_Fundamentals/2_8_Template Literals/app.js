@@ -1,34 +1,47 @@
-const name = 'John';
-const age = 31;
-const job = 'Web Developer';
-const city = 'Miami';
-let html;
+const name = "john";
+const age = 30;
+const job = "web developer";
+const city = "miami";
 
-// Without template strings (es5)
-html = '<ul><li>Name: ' + name + '</li><li>Age: ' + age + ' </li><li>Job: '+ job+ ' </li><li>City: '+ city +' </li></ul>';
+// ** many times we will need to add HTML from js
+// ** there is tools like fetch/ajax that will help us reload the HTML
+// ** but, in the end, we do it with JS
 
-html = '<ul>' +
-       '<li>Name: ' + name + '</li>' +
-       '<li>Age: ' + age + '</li>' +
-       '<li>Job: ' + job + '</li>' +
-       '<li>City: ' + city + '</li>' +
-       '</ul>';
+// ** we will need to create a temple HTML string with dynamic data and insert it to the page
 
-function hello(){
-  return 'hello';
+// ! template string = template literals
+// ? Without template string (ES5)
+// ** first we will create the html string that we want to insert:
+let html =
+  "<ul><li>name: " +
+  name +
+  "</li><li>age: " +
+  age +
+  "</li><li>job: " +
+  job +
+  "</li><li>city: " +
+  city +
+  "</li></ul>";
+
+//!! function for example:
+function hello() {
+  return "hello";
 }
 
-// With template strings (es6)
+// ? with template strings
+// ** template strings let us write this HTML string in an organize way
+// ** we can interpolate variables, evaluation exp, function
 html = `
-  <ul>
-    <li>Name: ${name}</li>
-    <li>Age: ${age}</li>
-    <li>Job: ${job}</li>
-    <li>City: ${city}</li>
-    <li>${2 + 2}</li>
-    <li>${hello()}</li>
-    <li>${age > 30 ? 'Over 30' : 'Under 30'}</li>
-  </ul>
+"<ul>
+    <li>name: ${name}</li>
+    <li>age: ${age}</li>
+    <li>job: ${job}</li>
+    <li>city: ${city}</li>
+    <li>evaluation: ${2 + 2}</li>
+    <li>Function: ${hello()}</li>
+    <li>if statement: ${age > 30 ? "old" : "young"}</li>
+</ul>;
 `;
 
+// ** now we need to "catch" the body inside the HTML page (AKA DOM), and assign there the html string that we have made
 document.body.innerHTML = html;
