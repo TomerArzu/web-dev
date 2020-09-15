@@ -1,0 +1,40 @@
+body {
+  background-color: #f1d6ab;
+}
+
+hr {
+  border-style: none;
+  border-top-style: dotted;
+  border-width: 5px;
+  border-color: #b22222;
+  width: 5%;
+}
+
+.nameTitle {
+  color: #66BFBF;
+  text-shadow: -3px -1px grey;
+  letter-spacing: 2px;
+  word-spacing: 3px;
+}
+
+h3 {
+  color: #66BFBF;
+}
+
+.intro {
+  color: #7c0a02;
+  text-align: center;
+}
+
+.sectionTitle {
+  text-align: center;
+  color: #be7575;
+}
+
+.cols {
+  width: 8%;
+}
+
+p:hover {
+  color: #ffffff
+}

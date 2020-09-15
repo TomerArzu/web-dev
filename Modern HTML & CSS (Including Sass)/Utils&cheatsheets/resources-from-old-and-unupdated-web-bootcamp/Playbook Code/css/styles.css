@@ -1,0 +1,71 @@
+/*
+-  External Css file
+To create a CSS file we go to our project folder and create new "css" folder,
+inside it we create a file named "styles.css"
+
+-  CSS syntax:
+selecter { property : value; }
+
+selector - is the element we want to change it answer the question "WHO"
+property - answer the question "what you want to change about the selector?" (like background, border, etc...)
+value - is the value of the propery we want to change. "HOW I want to change the background"
+we can apply as many rules as we want on each selector, example:
+
+selector{
+property1 : value1;
+property2 : value2;
+.
+.
+.
+propertyN : valueN;
+}
+
+NOTE: best practice to keep the properties within alphabatic order
+we can find all properties in MDN website under CSS tab
+
+Do I can use id selector or class selectors ?
+so the answer is simple: you can use both id and classes
+but the preference is to use classes rather than id's
+
+CSS Display properies:
+block - by default elements have "block" display it's mean that it covers all the line.
+which mean the whole width of the page. it can be think that it "blocking" out all the elements from being in the same line with it.
+
+inline - elements can be in the same line with other elements like <span></span> it do the box that wrapps the element in the precise size that its need to be
+NOTE: in "inline" elements we cant change the width! 
+
+for each element we can change its display in its CSS selector
+
+inline block - we perfect solution to control width and inline text, it combine "block" and "inline" display
+
+none - removes the element from the page (like display=false)
+we can also make element invisible (or hidden) by the CSS property: "visibility"
+
+visibility - for the value "hidden" the element become invisible and its look like a gap in the middle.
+
+CSS positioning:
+by default HTML elements have already predefined rules for how should be displayed on the web browser
+
+ */
+body {
+  background-color: blue;
+}
+
+hr {
+  background-color: none;
+  border-style: dotted none none none;
+  border-width: 5px;
+  width: 5%;
+  border-color: grey;
+}
+
+/*
+pseudo class:
+pseudo class denoted with a colon before the name of the class example -  :pseudoClass
+this calsses recieve the html element state and if specified its done some action,
+for example: the ":hover" pseudo class can feel if the cursor is on the specify element and change its style
+*/
+h1:hover {
+  color: white;
+  font-size: 50px;
+}

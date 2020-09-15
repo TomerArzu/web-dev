@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<!--tells the browser the HTML version that we are using (HTML5)-->
+<html lang="en" dir="ltr">
+<!--Boilerplate = Everything beween html tags tells the browser that is html code -->
+
+<head>
+  <!--The head section tells the browser how to render (or handle) the webpage, from title to style -->
+  <meta charset="utf-8">
+  <meta name="author" content="Tomer Arzuan" />
+  <meta name="description" content="This page aim is to implement,practice and explain about html tags (Element and attributes) as part of my Web Development Bootcamp from udemy" />
+  <meta name="keywords" content="HTML,CSS,JavaScript,JS,Web,Web Development, Bootcamp" <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--meta gives extra data or assocaited data to HTML document
+in this case: we tell the browser that all the charecters in our webpage is encoded using utf-8 code (we can see list of this chars in google)
+this encode is like a set of a charecters that I can use, like if I'll use arabic and my set of charecters are in japanies so all the charcters will be Moji backing. (בעברית = ג'יבריש')
+today we have unicode so the browser can understand any characters
+-->
+  <title> ☻ Tomer's HTML Playbook Code</title> <!-- this is the title of the webpage, we can see it in the tab browser text -->
+  <!-- favicon (favorite Icon): favicon.cc to create favicon -->
+  <!--<link rel="icon" href="faviconName.css">-->
+</head>
+
+<body>
+  <!-- center will align to the center all the elemntes in the range of this tag -->
+  <center>
+    <hr>
+    <h1> HTML Playbook Code</h1>
+    <hr>
+    <h1>This is Level 1 heading created by using h1 tag</h1>
+    <h1>Heading level 1</h1>
+    <h2>Heading level 2</h2>
+    <h3>Heading level 3</h3>
+    <h4>Heading level 4</h4>
+    <h5>Heading level 5</h5>
+    <h6>Heading level 6</h6>
+    <hr>
+  </center>
+  <center>
+    <h3>Line breaker</h3>
+  </center>
+
+  <!-- The <br> tag is use to break line it replace the known '\n'
+        it can be use in a middle of a line or before/after line (or heading)-->
+  <p>Exmaple to use &lt;br&gt; <br> to break line in the middle </p>
+  <hr>
+  <center>
+    <h3>Horizonatal Line</h3>
+  </center>
+  <p>
+    I can use &lt;hr&gt; tag to draw an horizonatal line<br />
+    each horizontal line can have an attributes like size color and etc.<br>
+    acctualy there is alot of Elements with attributes<br><br />
+    <b>NOTE</b> HTML tag structure: &lt;Element ...attributes...&gt;
+    <br /> For example: &lt;hr color="GREEN" size="1" noshade&gt; will draw the second line behind
+  </p>
+  <hr color="RED" noshade width="150" />
+  <hr color="GREEN" size="1" noshade width="250" />
+  <hr color="BLUE" size="2" noshade width="350" />
+  <hr color="CYAN" size="3" noshade width="450" />
+  <hr color="YELLOW" size="4" noshade width="550" />
+  <hr color="PINK" size="5" noshade width="650" />
+  <hr color="BLACK" size="6" noshade width="750" />
+  <hr color="GOLD" size="7" noshade width="850" /><br />
+  <hr />
+  <center>
+    <h3>Texts & Fonts</h3>
+  </center>
+  <p>
+    <b>Bold using &lt;b&gt;</b>| <strong>Bold using &lt;strong&gt;</strong> | <i>Italic using &lt;i&gt;</i> | <em>Italic using &lt;em&gt;</em> | <mark>Mark</mark> | <del>Deleted Text</del> | <ins>UnderLine</ins> |
+    <!--Notes:
+<b> </b> - use to have the reader attention to certian word (to styling)
+<<strong> </strong> - use to mark word as an importent word in semantic wise (like: "Note!", "Pay attention")
+
+<em> </em>- italic (Emphasize) for stress emphasis, to have the user attention (more common to use this)
+<i> </i>- represent text that set off from it's original context like foreign languege, definitions, ect. (for styling)
+
+remember: when we write HTML we more care about the page stracture from page style, that is the reason we prefer <em>,<strong> insted <i> and <bold>
+   -->
+  </p>
+  <hr />
+  <center>
+    <h3>Home Page</h3>
+  </center>
+  <p>Usually developers give the name "index.html" to thier website home page
+    <h4>UTF-8 Encode (8-bit Unicode Transformation Format ) </h4>
+    UTF-8 include all intenational symbols, so it's usefull and we will use it.
+  </p>
+
+  <hr />
+  <p>
+    <center>
+      <h3>HTML Lists</h3>
+    </center>
+
+    There is two main types of HTML Lists:
+    <ol>
+      <li>Ordered List <strong>&lt;ol&gt;</strong></li>
+      <li>Unordered List <strong>&lt;ul&gt;</strong></li>
+      <!--Unordered lists are usually without any numerical order because the order here is meaningless
+          typically donoted with bullets.
+          bullets are the defined style in HTML description we can shnage the style in css using the list-style-type:disc;\circle;\square;\none; property.
+     -->
+      <li>
+        Styling Unordered list:
+        <ul style="list-style-type:square;">
+          <li style="list-style-type:circle;">Example circle</li>
+          <li style="list-style-type:disc;">Example disc</li>
+          <li style="list-style-type:none;">Example none</li>
+          <li>Example list default style</li>
+          <!--as we can see up here we can set default style to list and override style in each list item-->
+        </ul>
+      </li>
+    </ol>
+    <strong>List Item &lt;li&gt;</strong> represent each element in the list (denoted by bullet, numeric ect)
+    <br><strong>Nested List</strong> are avilable from any type of lists and it can be nested as you wish
+    <br><strong>Order type</strong> can be numbered with numbers (default), letters, roman numbers. The li index can be start from any value
+    <ol start=3>
+      <li>list item 1</li>
+      <li>list item 2</li>
+    </ol>
+    <ol type="A">
+      <li>English</li>
+      <li>Letters</li>
+    </ol>
+    <ol type="i">
+      <li>roman</li>
+      <li>letters</li>
+    </ol>
+    <strong>Description Lists &lt;dl&gt;</strong> is kind of customized list with defined terms &lt;dt&gt; and description on each terms &lt;dd&gt;
+    <dt>term 1</dt>
+    <dd>- description 1 term 1</dd>
+    <dd>- description 2 term 1</dd>
+    <dt>term 2</dt>
+    <dd>• description 1 term 2</dd>
+    <dd>• description 2 term 2</dd>
+    <!--it can be seen that we can decide on the list item indicator as we wish -->
+    <dl>
+
+    </dl>
+  </p>
+  <hr />
+  <p>
+    <h3>Images &lt;img&gt;</h3>
+    Images tags are self-closing tags.
+    <br /> Images path can be from local stroge or from URL<br />
+    <!--
+the "alt" attribute can help search engines to tag photos
+when the interpater arrive to img tag (where ever there is URL in src)
+it send ping to the server of the url (in our case it's ping to everythingaboutweb servers)
+and if we got premission we download the photo. If the server goes down so do the image.
+Upload image from URL: -->
+    <img src="http://www.everythingaboutweb.com/wp-content/uploads/2013/08/html-css-small.png" alt="img from URL example" />
+    <img src="Images\htmlImgTag.png" alt="img from Local example" />
+  </p>
+  <hr />
+  <p>
+    <center>
+      <h3>Anchor tags &lt;a href="..."&gt;</h3>
+    </center>
+    <!--
+    href= hyper reference
+    href is an attribute of anchor (<a>)
+    anchor han open and close tag,
+    between the openner and closer we have the name of the url
+    example: <a href="https:\\...url...">link Name</a>
+    with href we can page between pages in our website
+  -->
+    <h5>Anchor tags</h5>
+    <strong>Anchor tags with href attribute</strong> aim is to link from our website to other website or inside our website
+    We can put a link wherever you want in the text.
+    Usefull links to learn web development:
+    <ol>
+      <li><a href="https://www.w3schools.com/">W3School</a></li>
+      <li><a href="https://devdocs.io/">devdocs.io</a></li>
+      <li><a href="https://developer.mozilla.org/en-US/">MDN web docs</a></li>
+    </ol>
+    <h5>Download</h5>
+    I can use <strong>download attribute</strong> with href to denote that this is downloadable<br>
+    <a download href="http://www.multitech.ac.ug/uploads/Introduction%20to%20Web%20Programming.pdf">Click Here To Download <b>Introduction to Web Programming</b>.pdf</a>
+    <!--The attribute download tells te browser to download/save file and it not open it immediately-->
+  </p>
+  <hr>
+  <p>
+    <center>
+      <h3>HTML Table &lt;table&gt;</h3>
+    </center>
+    Table help us to organize the data cells which make the page nice and readable.<br>
+    <strong>Table building</strong> done from top-down row after row in horizontal way which create us the cells of the table.<br>
+    For build it we must define it, then we create <strong>table row</strong> &lt;tr&gt;. Each row will contain data cells which are <strong>table data</strong> &lt;td&gt;<br>
+    to put head to the colunms we can use <strong>table head</strong> elment &lt;th&gt; which will be grouped in the first row of the table.<br>
+    <table border="1">
+      <tr>
+        <!--the th element make the data in his clousre bold by default-->
+        <th>col(0)</th>
+        <th>col(1)</th>
+        <th>col(2)</th>
+        <th>col(3)</th>
+      </tr>
+      <tr>
+        <td>cell(0,0)</td>
+        <td>cell(0,1)</td>
+        <td>cell(0,2)</td>
+        <td>cell(0,3)</td>
+      </tr>
+      <tr>
+        <td>cell(1,0)</td>
+        <td>cell(1,1)</td>
+        <td>cell(1,2)</td>
+        <td>cell(1,3)</td>
+      </tr>
+      <tr>
+        <td>cell(2,0)</td>
+        <td>cell(2,1)</td>
+        <td>cell(2,2)</td>
+        <td>cell(2,3)</td>
+      </tr>
+    </table>
+    <!--The table up here is the most simple table.
+there is a define structure of a table consist hear,body and footer.
+it is usefull to use the define structure to add functionality (with JS) and styling (with css)
+there is alot of attributes that we can use in table element but its is not recommended because this is deprecated which mean it should be in use anymore but probably will work
+  -->
+    <!--The more efficient table is as describe below
+cellspacing - attribute defines the space between the content of a cell and its border, displayed or not
+  -->
+    <h4>Advenced table</h4>
+    <table cellspacing="20" border="1.0">
+      <thead>
+        <tr>
+          <th>This is the head &lt;th&gt; of the table head &lt;thead&gt;</th>
+          <td>This is the data &lt;td&gt; of the &lt;thead&gt;</td>
+        </tr>
+      </thead>
+      <tbody>
+        </tr>
+        <th>This is the head &lt;th&gt; of the table head &lt;tbody&gt;</th>
+        <td>This is the data &lt;td&gt; of the &lt;tbody&gt;</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        </tr>
+        <th>This is the head &lt;th&gt; of the table head &lt;tfoot&gt;</th>
+        <td>This is the data &lt;td&gt; of the &lt;tfoot&gt;</td>
+        </tr>
+      </tfoot>
+    </table>
+  </p>
+  <hr>
+  <p>
+    <h3>Html form &lt;form&gt;</h3>
+    <!-- classes and id's Or . and # :
+each element in the HTML DOM can have one id and more then one classes
+with classes and id we can find specific element (id) or group of elements (classes) and apply on them some manipulations
+like styling or changing etc...
+   -->
+    <!--Now we will go through the attribute of form but later we will touch it with JavaScript
+The action attr. define what happened when the user will click "submin btn"
+Example: to leave a msg in contact page we want to open the user mailbox and send mail to desierd address automaticaly
+within a clean page, the tage will lock like:
+<form class="" action="mailto:TomerArzu@gmail.com" method="post" enctype="text/plain">
+ enctype="text/plain open the plain email txt
+  -->
+    <form class="" action="index.html" method="post">
+      <!--In the labels we kind of request the detials to our text box-->
+      <label>lable</label>
+      <!--The input is like a textbox where the user can write in it-->
+      <input type="text" name="" value="">
+      <!--To create submit btn we have to change the attributes only-->
+      <input type="submit" name="" value="submit btn"><br>
+      <label>Pick a color</label>
+      <!--We also can create a color picker-->
+      <input type="color" name="" value=""><br>
+      <label>Check the checkbox</label>
+      <!--Check box-->
+      <input type="checkbox" name="" value=""><br>
+      <label>Enter Password</label>
+      <!--Password input-->
+      <input type="password" name="" value=""><br>
+      <label>File chooser</label>
+      <!--Password input-->
+      <input type="file" name="" value=""><br>
+      <label>date chooser</label>
+      <!--Password input-->
+      <input type="date" name="" value=""><br>
+      <label>radio btn</label>
+      <!--Password input-->
+      <input type="radio" name="" value=""><br>
+      <label>range selector</label>
+      <!--Password input-->
+      <input type="range" name="" value="">
+    </form>
+  </p>
+</body>
+
+</html>
