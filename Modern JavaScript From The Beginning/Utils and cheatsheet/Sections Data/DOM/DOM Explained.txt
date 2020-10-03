@@ -1,0 +1,9 @@
+DOM - Document Object Model:
+this is a structured representation of HTML Doc.
+we can thing about it like tree of nodes (elements) that created by the browser.
+we can use JS to manipulated this DOM.
+the DOM is object oriented (OO Class) which mean we can use a set of properties and method that related to it and we can use. (change/add/remove...)
+we have a object window and its sub-class is the Document.
+the Document sub-class is the HTML root, afterwards there are all of the other tags that we proggramet wrote. (we can see the tree in the file "What is the DOM.png")
+
+Whats next? go upwards to the sections folder to section of DOM (section 3) starts with the 3_2_Examining_The_Document_Object
