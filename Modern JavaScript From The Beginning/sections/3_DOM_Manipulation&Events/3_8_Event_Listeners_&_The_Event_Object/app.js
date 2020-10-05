@@ -1,37 +1,51 @@
-// document.querySelector('.clear-tasks').addEventListener('click', function(e){
-//   console.log('Hello World');
+// * until now we learn how to navigate and change some properties in the DOM
+// * BUT we didn't had some interactions with the UI
+// * in the following we learn to work with EVENTS and EVENTS LISTENERS
 
-//   //e.preventDefault();
+// * we will add events to some element in the DOM
+
+// * first, we will catch the object that we want to add it event
+// * then we will use the method addEventListener
+// element.addEventListener('EventName', CallBackFunction(){});
+
+// * CallBackFunction can be:
+// * anonymous function - without declaration or name
+// * named function - function that pre-defined with given name
+
+// * in the HTML we can see that there is href the the button we want to add it event,
+// * the href is redirect the page to google home page, that is ok because this is the default behavior of <a> element with specify href
+// * in order to change this behavior we want to prevent the default action that it do.
+// * to do this, we pass to the callback function e argument (event arg), that use it to prevent the default behavior
+
+// ! example with anonymous function
+// document.querySelector(".clear-tasks").addEventListener("click", function (e) {
+// 	console.log("Event Poped");
+// 	e.preventDefault();
 // });
 
-document.querySelector('.clear-tasks').addEventListener('click', onClick);
+// ! example with named function
+document.querySelector(".clear-tasks").addEventListener("click", OnClick);
 
-function onClick(e){
-  //console.log('Clicked');
+function OnClick(e) {
+	// console.log("Event Poped");
 
-  let val;
+	// TODO: exploring the event object (e)
+	console.log("Event Object e Exploring", e);
+	// * in the event there are much information
+	// * in this information we have the target which point us to the location of there event came from
+	// ? Event target
+	// * in this case it came from <a> tag with classes: clear-tasks, btn, black
+	console.log("OnClick -> e.target", e.target);
+	console.log("OnClick -> e.target.classList", e.target.classList);
+	e.target.innerText = "Hello";
+	// ? Event type
+	console.log("e.type", e.type);
 
-  val = e;
+	// ? Coordinates relative to the window
+	console.log("OnClick -> .clientX", e.clientX);
+	console.log("OnClick -> e.clientY", e.clientY);
 
-  // Event target element
-  val = e.target;
-  val = e.target.id;
-  val = e.target.className;
-  val = e.target.classList;
-
-  // Event type
-  val = e.type;
-
-  // Timestamp
-  val = e.timeStamp;
-
-  // Coords event relative to the window
-  val = e.clientY;
-  val = e.clientX;
-
-  // Coords event relative to the element
-  val = e.offsetY;
-  val = e.offsetX;
-
-  console.log(val);
+	// ? Coordinates relative to the Element
+	console.log("OnClick -> e.offsetX", e.offsetY);
+	console.log("OnClick -> e.offsetY", e.offsetX);
 }
