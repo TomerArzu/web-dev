@@ -1,36 +1,60 @@
-// EVENT BUBBLING
+// ? EVENT BUBBLING
+// * the bubbling of the events up through the DOM,
+// * when event fires on an element, it is (the event) bubble up through its parents,
 
-// document.querySelector('.card-title').addEventListener('click', function(){
-//   console.log('card title');
+// // * child of card-content (a leaf in out case):
+// document.querySelector(".card-title").addEventListener("click", function () {
+// 	console.log("event fired from card-title element, bubbling 0");
+// 	console.log(".card-title");
 // });
 
-// document.querySelector('.card-content').addEventListener('click', function(){
-//   console.log('card content');
+// // * parent of card-title and child card:
+// document.querySelector(".card-content").addEventListener("click", function () {
+// 	console.log("event fired from card-content element, bubbling 1");
+// 	console.log(".card-content");
 // });
 
-// document.querySelector('.card').addEventListener('click', function(){
-//   console.log('card');
+// // * parent of card-content and child col:
+// document.querySelector(".card").addEventListener("click", function () {
+// 	console.log("event fired from card element, bubbling 2");
+// 	console.log(".card");
 // });
 
-// document.querySelector('.col').addEventListener('click', function(){
-//   console.log('col');
+// // * parent of card ( a root in our case):
+// document.querySelector(".col").addEventListener("click", function () {
+// 	console.log("event fired from col element, bubbling 3");
+// 	console.log(".col");
 // });
 
-// EVENT DELGATION
+// ! In the above example:
+// * when I'll click on the element who's implement the class card-title,
+// * its event will fired and it's callback function will be called
+// * the event will bubble up to its parent and will fired the same event in the parent,
+// * the parent's callback function will be called as well
+// * and so on up to the root of the DOM (or up to the no-event implementing parent)
 
-// const delItem = document.querySelector('.delete-item');
+// ? EVENT DELEGATION
+// * almost the opposite of bubbling, we put the listener on the parent element,
+// * and use the callback function on every child of this element.
+// * for instance, we put listener on <ul>, and then we will target the <li>
 
-// delItem.addEventListener('click', deleteItem);
+// TODO: When we need event delegation
+// * 1. if all children of element implement the same functionality in a certain way (example below)
+// * 2. if we dynamically insert element to the DOM through JS
 
-document.body.addEventListener('click', deleteItem);
+// * for example:
+// * all li elements have the delete button,
+// *  we will catch the parent and assign it an event
+// * in the event we will look of the delete-able element (by class/id)
+// * as follow:
 
-function deleteItem(e){
-  // if(e.target.parentElement.className === 'delete-item secondary-content'){
-  //   console.log('delete item');
-  // }
+const listItemWrapper = document.querySelector("ul.collection");
 
-  if(e.target.parentElement.classList.contains('delete-item')){
-    console.log('delete item');
-    e.target.parentElement.parentElement.remove();
-  }
+listItemWrapper.addEventListener("click", deleteItem);
+
+function deleteItem(e) {
+	if (e.target.parentElement.classList.contains("delete-item")) {
+		console.log("delete item");
+		e.target.parentElement.parentElement.remove();
+	}
 }
