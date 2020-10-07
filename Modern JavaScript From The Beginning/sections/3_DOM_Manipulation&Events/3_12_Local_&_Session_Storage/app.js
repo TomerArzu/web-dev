@@ -1,44 +1,66 @@
-// set local storage item
-// localStorage.setItem('name', 'John');
-// localStorage.setItem('age', '30');
+// ? Local Storage
+// * "localStorage" is an object that provide an API methods (set, remove, update)
+// * the localStorage object is include in the window object
+// * its structured in a key-value (it is actually a JSON - JavaScript Object Notation),
+// * the value is must be a string BUT we can save arrays, object and more, to do this we will use JSON.Stringify method
 
-// set session storage item
-// sessionStorage.setItem('name', 'Beth');
+// ! Session VS Local storage:
+// * Session storage - will clear after we close the browser (Once the session ends)
+// * Local storage - will stay until we clear it manually
 
-// remove from storage
-// localStorage.removeItem('name');
+// * we can see the following in the browser's dev-tools (in firefox under "Storage" tab)
+// ? set item in the local storage
+// ! NOTICE: there can be duplicate keys
+// localStorage.setItem("forename", "John");
+// localStorage.setItem("surname", "Snow");
+// localStorage.setItem("forename1", "Donald");
+// localStorage.setItem("surname1", "Duck");
 
-// get from storage
-// const name = localStorage.getItem('name');
-// const age = localStorage.getItem('age');
+// ? set item in the session storage
+// sessionStorage.setItem("name", "Beth");
 
-// // clear local storage
-// localStorage.clear();
+// ? Clear local Storage
+// localStorage.removeItem("surname");
 
-// console.log(name, age);
+// ? get from storage
+// * to get we specify the key
+// const forename = localStorage.getItem("forename");
+// console.log("forename from local storage", forename);
 
-document.querySelector('form').addEventListener('submit', function(e){
-  const task = document.getElementById('task').value;
+// ? clear all local storage
+localStorage.clear();
 
-  let tasks;
+// * after clearing the local storage or if there is not such a key,
+// * the getItem method will return null
+// const localStorageEmptyItem = localStorage.getItem("forename");
+// console.log("localStorageEmptyItem", localStorageEmptyItem);
 
-  if(localStorage.getItem('tasks') === null) {
-    tasks = [];
-  } else {
-    tasks = JSON.parse(localStorage.getItem('tasks'));
-  }
+document.querySelector("form").addEventListener("submit", function (e) {
+	// * first, we take the written value from the input
+	const task = document.getElementById("task").value;
 
-  tasks.push(task);
+	// * we can save one task at the time,
+	// * if we want to save a several tasks we need to maintain an array of tasks
+	let tasks;
+	// * the logic:
+	// * if there is no tasks array we create a new one else,
+	// * we retrieve it from the local storage as a string and convert it to JSON (actually an array),
+	// * for more convenient way to work with JS object literals
+	if (localStorage.getItem("tasks") == null) {
+		tasks = [];
+	} else {
+		tasks = JSON.parse(localStorage.getItem("tasks"));
+	}
 
-  localStorage.setItem('tasks', JSON.stringify(tasks));
+	// * after we have the array as an array, we push to the end of it the new task from the input
+	tasks.push(task);
 
-  alert('Task saved');
+	console.log("tasks", tasks);
 
-  e.preventDefault();
-});
+	// * convert the tasks array to string and then, insert into the local storage
+	// * the key is "tasks" and value is the tasks array as string
+	localStorage.setItem("tasks", JSON.stringify(tasks));
 
-const tasks = JSON.parse(localStorage.getItem('tasks'));
-
-tasks.forEach(function(task){
-  console.log(task);
+	// alert(`the task '${task}' was saved !`);
+	e.preventDefault();
 });
