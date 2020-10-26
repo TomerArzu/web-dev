@@ -2,6 +2,7 @@
 var a = 1;
 let b = 2;
 const c = 3;
+console.log("Global Scope", a, b, c);
 
 //? function scope
 // function test() {
@@ -11,7 +12,7 @@ const c = 3;
 //   console.log('Function Scope: ', a, b, c);
 // }
 
-// test();
+test();
 
 //?  Block Scope
 // if(true) {
