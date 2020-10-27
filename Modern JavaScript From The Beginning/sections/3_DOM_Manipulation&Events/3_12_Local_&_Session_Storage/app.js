@@ -1,6 +1,6 @@
 // ? Local Storage
 // * "localStorage" is an object that provide an API methods (set, remove, update)
-// * the localStorage object is include in the window object
+// * the localStorage object included in the window object
 // * its structured in a key-value (it is actually a JSON - JavaScript Object Notation),
 // * the value is must be a string BUT we can save arrays, object and more, to do this we will use JSON.Stringify method
 

@@ -1,86 +1,78 @@
-// Define UI Vars
-const form = document.querySelector('#task-form');
-const taskList = document.querySelector('.collection');
-const clearBtn = document.querySelector('.clear-tasks');
-const filter = document.querySelector('#filter');
-const taskInput = document.querySelector('#task');
+// * Define UI variable that we will use
+const form = document.querySelector("#task-form");
+const taskList = document.querySelector(".collection");
+const clearBtn = document.querySelector(".clear-tasks");
+const filter = document.querySelector("#filter");
+const taskInput = document.querySelector("#task");
 
-// Load all event listeners
-loadEventListeners();
-
-// Load all event listeners
-function loadEventListeners() {
-  // Add task event
-  form.addEventListener('submit', addTask);
-  // Remove task event
-  taskList.addEventListener('click', removeTask);
-  // Clear task event
-  clearBtn.addEventListener('click', clearTasks);
-  // Filter tasks event
-  filter.addEventListener('keyup', filterTasks);
+// * load all event listeners
+attachEventListener();
+function attachEventListener() {
+	// * Add task event
+	form.addEventListener("submit", addTask);
+	// * remove task event
+	taskList.addEventListener("click", removeTask);
+	// * clear tasks event
+	clearBtn.addEventListener("click", clearTasks);
+	// * filter tasks event
+	filter.addEventListener("keyup", filterTasks);
 }
 
-// Add Task
 function addTask(e) {
-  if(taskInput.value === '') {
-    alert('Add a task');
-  }
+	if (taskInput.value === "") {
+		alert("Add a task");
+	} else {
+		// * create the task's UI (li)
+		const li = document.createElement("li");
+		li.className = "collection-item";
+		li.appendChild(document.createTextNode(taskInput.value));
+		const link = document.createElement("a");
+		link.href = "#";
+		link.className = "delete-item secondary-content";
+		link.innerHTML = "<i class='fa fa-remove'></i>";
+		li.appendChild(link);
 
-  // Create li element
-  const li = document.createElement('li');
-  // Add class
-  li.className = 'collection-item';
-  // Create text node and append to li
-  li.appendChild(document.createTextNode(taskInput.value));
-  // Create new link element
-  const link = document.createElement('a');
-  // Add class
-  link.className = 'delete-item secondary-content';
-  // Add icon html
-  link.innerHTML = '<i class="fa fa-remove"></i>';
-  // Append the link to li
-  li.appendChild(link);
+		// * append the li to ul
+		taskList.appendChild(li);
 
-  // Append li to ul
-  taskList.appendChild(li);
-
-  // Clear input
-  taskInput.value = '';
-
-  e.preventDefault();
+		// * clear the input
+		taskInput.value = "";
+	}
+	e.preventDefault();
 }
 
-// Remove Task
 function removeTask(e) {
-  if(e.target.parentElement.classList.contains('delete-item')) {
-    if(confirm('Are You Sure?')) {
-      e.target.parentElement.parentElement.remove();
-    }
-  }
+	if (e.target.parentElement.classList.contains("delete-item")) {
+		if (confirm("Are You Sure?")) {
+			e.target.parentElement.parentElement.remove();
+		}
+	}
 }
 
-// Clear Tasks
-function clearTasks() {
-  // taskList.innerHTML = '';
+function clearTasks(e) {
+	// ! Nice Trick
+	// * we clean the innerHTML of th ul element
+	// taskList.innerHTML = "";
 
-  // Faster
-  while(taskList.firstChild) {
-    taskList.removeChild(taskList.firstChild);
-  }
+	// ! Faster
+	while (taskList.firstChild) {
+		taskList.removeChild(taskList.firstChild);
+	}
 
-  // https://jsperf.com/innerhtml-vs-removechild
+	// * comparison
+	// https://jsperf.com/innerhtml-vs-removechild
 }
 
-// Filter Tasks
 function filterTasks(e) {
-  const text = e.target.value.toLowerCase();
-
-  document.querySelectorAll('.collection-item').forEach(function(task){
-    const item = task.firstChild.textContent;
-    if(item.toLowerCase().indexOf(text) != -1){
-      task.style.display = 'block';
-    } else {
-      task.style.display = 'none';
-    }
-  });
+	const text = e.target.value.toLowerCase();
+	document.querySelectorAll(".collection-item").forEach(function (task) {
+		// * task's first child is text node
+		const item = task.firstChild.textContent.toLowerCase();
+		if (item.indexOf(text) == -1) {
+			task.style.display = "none";
+		} else {
+			task.style.display = "block";
+		}
+	});
+	console.log("filterTasks -> text", text);
 }
