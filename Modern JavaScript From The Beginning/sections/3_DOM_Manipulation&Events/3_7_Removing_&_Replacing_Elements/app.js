@@ -10,7 +10,7 @@
 // * we want to replace h5 with an h2 and other text
 const newHeading = document.createElement("h2");
 newHeading.id = "task-title";
-newHeading.appendChild(document.createTextNode("new Task List"));
+newHeading.appendChild(document.createTextNode("new Task List :)"));
 console.log("newHeading", newHeading);
 
 // * Get the old heading
@@ -43,7 +43,6 @@ const link = firstLi.children[0];
 
 // * we can see all classes that element is implement
 console.log("link.classList", link.classList);
-
 // ? Add class to element
 link.classList.add("Text-Class");
 console.log("adding a Text-Class to link", link);

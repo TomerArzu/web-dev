@@ -14,12 +14,12 @@
 
 // ? Get things from the element
 console.log(
-	"getElementById('task-title').id:",
-	document.getElementById("task-title").id
+    "getElementById('task-title').id:",
+    document.getElementById("task-title").id
 );
 console.log(
-	"getElementById('task-title').className:",
-	document.getElementById("task-title").className
+    "getElementById('task-title').className:",
+    document.getElementById("task-title").className
 );
 
 const taskTitle = document.getElementById("task-title");
@@ -33,12 +33,16 @@ const taskTitle = document.getElementById("task-title");
 // ?  Change content
 // * we have 3 different ways to change HTML elements content
 // * we will apply this properties after selecting the changeable element
+
 // * textContent
 // taskTitle.textContent = 'Task List';
+
 // * innerText
 // taskTitle.innerText = 'My Tasks';
+
 // * innerHTML - we use this to "push" into the element more HTML element
-// * it apply we string between the open and closer HTML tag.
+// * it apply with string between the open and closer HTML tag.
+
 // * here, for example, we selected the h5 element so after rendering we can inspect the HTML page
 // * and we can see that we have <h5 id="task-title" (..attr..)><span (..attr..)></span></h5>
 // * it is usually used with the use of fetch or AJAX
@@ -59,8 +63,8 @@ taskTitle.innerHTML = '<span style="color:red">Task List</span>';
 // * we can see that the selector return us all of the HTML line
 console.log(document.querySelector("#task-title"));
 console.log(
-	"document.querySelector('#task-title')",
-	document.querySelector("#task-title")
+    "document.querySelector('#task-title')",
+    document.querySelector("#task-title")
 );
 console.log(document.querySelector(".card-title"));
 console.log(document.querySelector("h5"));

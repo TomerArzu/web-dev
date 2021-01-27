@@ -2,28 +2,28 @@
 // * the bubbling of the events up through the DOM,
 // * when event fires on an element, it is (the event) bubble up through its parents,
 
-// // * child of card-content (a leaf in out case):
+// // * child of card-content (a leaf in our case):
 // document.querySelector(".card-title").addEventListener("click", function () {
-// 	console.log("event fired from card-title element, bubbling 0");
-// 	console.log(".card-title");
+//     console.log("event fired from card-title element, bubbling 0");
+//     console.log(".card-title");
 // });
 
 // // * parent of card-title and child card:
 // document.querySelector(".card-content").addEventListener("click", function () {
-// 	console.log("event fired from card-content element, bubbling 1");
-// 	console.log(".card-content");
+//     console.log("event fired from card-content element, bubbling 1");
+//     console.log(".card-content");
 // });
 
 // // * parent of card-content and child col:
 // document.querySelector(".card").addEventListener("click", function () {
-// 	console.log("event fired from card element, bubbling 2");
-// 	console.log(".card");
+//     console.log("event fired from card element, bubbling 2");
+//     console.log(".card");
 // });
 
 // // * parent of card ( a root in our case):
 // document.querySelector(".col").addEventListener("click", function () {
-// 	console.log("event fired from col element, bubbling 3");
-// 	console.log(".col");
+//     console.log("event fired from col element, bubbling 3");
+//     console.log(".col");
 // });
 
 // ! In the above example:
@@ -31,7 +31,7 @@
 // * its event will fired and it's callback function will be called
 // * the event will bubble up to its parent and will fired the same event in the parent,
 // * the parent's callback function will be called as well
-// * and so on up to the root of the DOM (or up to the no-event implementing parent)
+// * and so on upwards to the root of the DOM (or up to the no-event implementing parent)
 
 // ? EVENT DELEGATION
 // * almost the opposite of bubbling, we put the listener on the parent element,
@@ -44,17 +44,19 @@
 
 // * for example:
 // * all li elements have the delete button,
-// *  we will catch the parent and assign it an event
+// * we will catch the parent and assign it an event
 // * in the event we will look of the delete-able element (by class/id)
 // * as follow:
 
 const listItemWrapper = document.querySelector("ul.collection");
+console.log("listItemWrapper", listItemWrapper);
 
 listItemWrapper.addEventListener("click", deleteItem);
 
 function deleteItem(e) {
-	if (e.target.parentElement.classList.contains("delete-item")) {
-		console.log("delete item");
-		e.target.parentElement.parentElement.remove();
-	}
+    console.log("deleteItem ~ e.target", e.target);
+    if (e.target.parentElement.classList.contains("delete-item")) {
+        console.log("delete item");
+        e.target.parentElement.parentElement.remove();
+    }
 }

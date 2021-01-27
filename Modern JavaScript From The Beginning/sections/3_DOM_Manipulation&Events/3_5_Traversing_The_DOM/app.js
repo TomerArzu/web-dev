@@ -19,7 +19,7 @@ const childNode = list.childNodes;
 console.log("childNode", childNode);
 
 // TODO: Types of nodes
-// * we can node identify by its type
+// * we can identify nodes by its type
 // * the type help us if we want to iterate in interpret a specific types of nodes
 console.log("childNode[0].nodeType", childNode[0].nodeType);
 console.log("childNode[1].nodeType", childNode[1].nodeType);
@@ -32,7 +32,7 @@ console.log("childNode[1].nodeType", childNode[1].nodeType);
 //! 9 - Document itself
 //! 10 - Doctype
 
-// * in most cases we don't ant to deal with this text nodes, so we want manipulate only the visible children of elements
+// * in most cases we don't want to deal with this text nodes, so we want manipulate only the visible children of elements
 // ? Get child ELEMENT nodes
 const children = list.children;
 // * the return value for this property is HTMLCollection (and not a NodeList)
