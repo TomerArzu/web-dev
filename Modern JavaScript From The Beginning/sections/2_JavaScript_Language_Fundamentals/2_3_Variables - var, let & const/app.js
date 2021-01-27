@@ -40,6 +40,7 @@ const person = {
   age: 30,
 };
 
+
 console.log("the const person object: (before change)");
 console.log(person);
 person.name = "Sara";
@@ -53,6 +54,8 @@ console.log(numbers);
 // !! we can add elements to an array:
 numbers.push(6);
 console.log(numbers);
+
+// ** If we will look at the console we can see that the const variable is holds a reference and not actual data
 
 // ** how to use const
 // ** we are going to use const unless:

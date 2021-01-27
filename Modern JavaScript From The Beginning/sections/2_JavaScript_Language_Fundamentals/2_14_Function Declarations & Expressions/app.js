@@ -16,9 +16,10 @@ function greet(firstName = "John", lastName = "Doe") {
 console.log(greet());
 
 // ? FUNCTION EXPRESIONS
-// ** this types of function meant to be encapsulated on a variable
+// ** this types of function meant to be encapsulated in a variable
 // ** this functions usually anonymous func (which mean that there is not actually declared name to the function)
 // ** the syntax:
+
 /*
 const/let variableName = function(arg0, arg1, arg2 , ... , argM){
   function_statements...
@@ -39,12 +40,14 @@ console.log(square());
 // ? IMMEDIATELY INVOKABLE FUNCTION EXPRESSIONS - IIFEs
 // ** this function that i declare and run at the same time
 // ** the syntax:
+
 /*
 (function (kargs...){
   function statements
 })(kargs...);
 */
-// ** the prentasize at the end is for the arguments that we need to send for the function
+
+// ** the parenthesize at the end is for the arguments that we need to send for the function
 (function () {
   console.log("IIFE Run..");
 })();
@@ -64,6 +67,7 @@ const todo = {
     console.log(`Edit todo ${id}`);
   },
 };
+
 // ** we can add a new method entry into an objects
 todo.delete = function () {
   console.log("Delete todo...");

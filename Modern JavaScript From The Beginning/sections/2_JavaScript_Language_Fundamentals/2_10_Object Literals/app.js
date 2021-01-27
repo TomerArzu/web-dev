@@ -9,7 +9,7 @@ type objectName={
 */
 
 //  ** object value can be: String, Array, Object (nested object), (even!!) functions or variable that holds one of those
-// ** while the key is variable-like
+// ** while the key is variable-like (property type)
 const person = {
   firstName: "Steve",
   lastName: "Smith",
@@ -29,9 +29,8 @@ const person = {
 };
 
 // ? accessing the object:
-let val;
-
 // ** through variable that holds the object:
+let val;
 val = person;
 const personName = val.firstName;
 

@@ -17,7 +17,7 @@ const id = 100;
 // ** and then the comparison done.
 // ** for example: if id was a string: id='100'
 // ** and then we make id==100   ==> the return value will be true
-// ** for a summery, == compare only values and not type
+// ** In summery, == compare only values and not type
 if (id == 100) {
   console.log("CORRECT");
 } else {
@@ -50,7 +50,7 @@ if (id !== 100) {
 
 //? Test if variable is undefined
 console.log("undefined TEST");
-if (typeof id !== "undefined") {
+if (typeof id !== undefined) {
   console.log(`The ID is ${id}`);
 } else {
   console.log("NO ID");

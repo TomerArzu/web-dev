@@ -11,7 +11,7 @@
 
 //? Prompt
 // ** just prompt message with input
-// ** we prepate the input and attache it as argument to the alert
+// ** we prepare the input and attach it as argument to the alert
 // const input = prompt();
 // alert(input);
 
@@ -78,6 +78,7 @@ console.log("window.navigator", window.navigator);
 // ** we can access the navigator's properties
 // ** appName is going to be netscape unless we use IE
 val = window.navigator.appName;
+
 console.log("window.navigator.appName", window.navigator.appName);
 val = window.navigator.appVersion;
 console.log("window.navigator.appVersion", window.navigator.appVersion);

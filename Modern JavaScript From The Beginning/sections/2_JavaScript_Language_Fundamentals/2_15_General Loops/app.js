@@ -41,7 +41,7 @@ const cars = ["Ford", "Chevy", "Honda", "Toyota"];
 
 // ? FOREACH
 // ** foreach receive an anonymous callback function that expect:
-// ** function(current object, it's numeric index, the iterable object[arrays,objects])
+// ** function(current object, it's numeric index, the iterable variables[arrays,objects])
 // ** the callback function can receive only the current object
 // ** the syntax:
 /*

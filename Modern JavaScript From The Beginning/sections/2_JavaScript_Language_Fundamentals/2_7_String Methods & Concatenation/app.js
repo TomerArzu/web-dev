@@ -24,6 +24,7 @@ val = firstName.length;
 
 // concat()
 val = firstName.concat(" ", lastName);
+console.log("🚀 ~ file: app.js ~ line 27 ~ val", val)
 
 // Change case
 val = firstName.toUpperCase();
