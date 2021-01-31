@@ -1,62 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Flex Basics flex property</title>
-    <style>
-      * {
-        box-sizing: content-box;
-      }
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Flex Basics flex property</title>
+        <style>
+            * {
+                box-sizing: content-box;
+            }
 
-      body {
-        font-family: Arial, Helvetica, sans-serif;
-      }
+            body {
+                font-family: Arial, Helvetica, sans-serif;
+            }
 
-      .flex-container {
-        overflow: -moz-hidden-unscrollable;
-        /* the border is just to demonstrate the div */
-        /* border: 1px solid red; */
-        display: flex;
-      }
+            .flex-container {
+                overflow: -moz-hidden-unscrollable;
+                /* the border is just to demonstrate the div */
+                /* border: 1px solid red; */
+                display: flex;
+            }
 
-      .item {
-        background: #f4f4f4;
-        border: 1px solid #ccc;
-        margin: 10px;
-        padding: 10px;
-        text-align: center;
-        border-radius: 10px;
-        /* flex: (k-values); its a shorthand for flex-grow,flex-shrink and flex-basis correspond */
-        /* flex: 1 0 200px; */
-        /* most of the time we will see the flex:1 
+            .item {
+                background: #f4f4f4;
+                border: 1px solid #ccc;
+                margin: 10px;
+                padding: 10px;
+                text-align: center;
+                border-radius: 10px;
+                /* flex: (k-values); its a shorthand for flex-grow,flex-shrink and flex-basis correspond */
+                /* flex: 1 0 200px; */
+                /* most of the time we will see the flex:1 
             because we can use media queries */
-        flex: 1;
-      }
+                flex: 1;
+            }
 
-      /* flex properties: */
-      .item-1 {
-      }
-      .item-2 {
-      }
-      .item-3 {
-        flex: 2;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="flex-container">
-      <!-- each one of the next divs is fex items -->
-      <div class="item item-1">
-        <h1>Item 1</h1>
-      </div>
-      <div class="item item-2">
-        <h1>Item 2</h1>
-      </div>
-      <div class="item item-3">
-        <h1>Item 3</h1>
-      </div>
-    </div>
-  </body>
+            /* flex properties: */
+            .item-1 {
+            }
+            .item-2 {
+            }
+            .item-3 {
+                flex: 3;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="flex-container">
+            <!-- each one of the next divs is fex items -->
+            <div class="item item-1">
+                <h1>Item 1</h1>
+            </div>
+            <div class="item item-2">
+                <h1>Item 2</h1>
+            </div>
+            <div class="item item-3">
+                <h1>Item 3</h1>
+            </div>
+        </div>
+    </body>
 </html>

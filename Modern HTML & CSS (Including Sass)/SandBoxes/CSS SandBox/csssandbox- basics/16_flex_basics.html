@@ -1,85 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Flex Basics</title>
-    <style>
-      *{
-        box-sizing: content-box;
-      }
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Flex Basics</title>
+        <style>
+            * {
+                box-sizing: content-box;
+            }
 
-      body{
-        font-family: Arial, Helvetica, sans-serif;
-      }
+            body {
+                font-family: Arial, Helvetica, sans-serif;
+            }
 
-      .flex-container{
-        overflow: -moz-hidden-unscrollable;
-        /* the border is just to demonstrate the div */
-        border: 1px solid red;
-        /* when I define a flex display for some container,
-          all the items inside are getting alignment to the line of the container
-          for each item that i will add the other items space will reduce and they will make space to the new item(s) */
-        display: flex;
-        /* by default the orientation of flex container is row (horizontal - through the main axis) 
-            we can change the orientation */
-        flex-direction:row; /* --> default */
-            /* flex-direction: row-reverse;
-            flex-direction: column-reverse;
-            flex-direction: column; */
+            .flex-container {
+                overflow: -moz-hidden-unscrollable;
+                /* the border is just to demonstrate the div */
+                border: 1px solid red;
+                /* when I define a flex display for some container,
+                all the items inside are getting alignment to the line of the container
+                for each item that i will add the other items space will reduce and they will make space to the new item(s) */
+                display: flex;
+                /* by default the orientation of flex container is row (horizontal - through the main axis) 
+                we can change the orientation */
+                flex-direction: row; /* --> default */
+                /* flex-direction: row-reverse;
+                flex-direction: column-reverse;
+                flex-direction: column; */
 
-            /* flex-wrap: wrap; - can give use a responsive layout, when its wraps and the width changes the items organized in the vertical orientation */
-            /* flex-wrap: wrap; */
+                /* flex-wrap: wrap; - can give use a responsive layout, when its wraps and the width changes the items organized in the vertical orientation */
+                /* flex-wrap: wrap; */
+            }
 
-      }
+            .item {
+                background: #f4f4f4;
+                border: 1px solid #ccc;
+                margin: 10px;
+                padding: 10px;
+                text-align: center;
+                border-radius: 10px;
+                /* when i apply flex-grow to all the items inside they will grow in the same rate */
+                /* flex-grow: 1; */
+            }
 
-      .item{
-        background:#f4f4f4;
-        border: 1px solid #ccc;
-        margin: 10px;
-        padding: 10px;
-        text-align: center;
-        border-radius: 10px;
-          /* when i apply flex-grow to all the items inside they will grow in the same rate */
-        /* flex-grow: 1; */
-      }
-
-      /* flex properties: */
-      .item-1{
-        /* flex shrink - by default, all items get shrinking in the same rate of the width */
-        /* we can set the shrink of an item by flex-shrink prop */
-        flex-shrink: 0;
-        flex-basis: 1;
-      }
-      .item-2{
-        /* with the next property, when the screen will grow the item will grow with it */
-        flex-grow: 1;
-        /* if we want to define a width not in the parent container, we can define flex-basis
+            /* flex properties: */
+            .item-1 {
+                /* flex shrink - by default, all items get shrinking in the same rate of the width */
+                /* we can set the shrink of an item by flex-shrink prop */
+                flex-shrink: 3;
+                flex-basis: 1;
+            }
+            .item-2 {
+                /* with the next property, when the screen will grow the item will grow with it */
+                flex-grow: 1;
+                /* if we want to define a width not in the parent container, we can define flex-basis
             MDN: The flex-basis CSS property sets the initial main size of a flex item. It sets the size of the content box unless otherwise set with box-sizing */
-        flex-basis: 0;
-      }
-      .item-3{
-        /* will make item-3 grow twice in from the size of item-2 */
-        /* because we defined width in the container parent, its not exactly twice a size */
-        flex-grow: 2;
-        flex-basis: 0;
-      }
-
-    </style>
-  </head>
-  <body>
-    <div class="flex-container">
-      <!-- each one of the next divs is fex items -->
-      <div class="item item-1">
-        <h1>Item 1</h1>
-      </div>
-      <div class="item item-2">
-        <h1>Item 2</h1>
-      </div>
-      <div class="item item-3">
-        <h1>Item 3</h1>
-      </div>
-    </div>
-  </body>
+                flex-basis: 2;
+            }
+            .item-3 {
+                /* will make item-3 grow twice in from the size of item-2 */
+                /* because we defined width in the container parent, its not exactly twice a size */
+                flex-grow: 2;
+                flex-basis: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="flex-container">
+            <!-- each one of the next divs is fex items -->
+            <div class="item item-1">
+                <h1>Item 1</h1>
+            </div>
+            <div class="item item-2">
+                <h1>Item 2</h1>
+            </div>
+            <div class="item item-3">
+                <h1>Item 3</h1>
+            </div>
+        </div>
+    </body>
 </html>
