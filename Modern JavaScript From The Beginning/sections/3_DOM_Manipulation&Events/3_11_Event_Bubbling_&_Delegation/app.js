@@ -52,7 +52,6 @@ const listItemWrapper = document.querySelector("ul.collection");
 console.log("listItemWrapper", listItemWrapper);
 
 listItemWrapper.addEventListener("click", deleteItem);
-
 function deleteItem(e) {
     console.log("deleteItem ~ e.target", e.target);
     if (e.target.parentElement.classList.contains("delete-item")) {
