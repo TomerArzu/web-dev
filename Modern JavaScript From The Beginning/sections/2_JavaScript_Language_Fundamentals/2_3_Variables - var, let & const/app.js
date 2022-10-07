@@ -40,7 +40,6 @@ const person = {
   age: 30,
 };
 
-
 console.log("the const person object: (before change)");
 console.log(person);
 person.name = "Sara";
@@ -60,7 +59,7 @@ console.log(numbers);
 // ** how to use const
 // ** we are going to use const unless:
 // ** 1.  we plan the value to be changed
-// ** 2.  we need to initialized it
+// ** 2.  we don't need to initialized it
 // ** 3.  we using it in loop
 
 // ** otherwise, cost let the code more readability -

@@ -28,10 +28,10 @@ const hasKids = true;
 
 // ? Null
 const car = null;
-console.log("🚀 ~ file: app.js ~ line 31 ~ typeof(car)", typeof(car))
+console.log("🚀 ~ file: app.js ~ line 31 ~ typeof(car)", typeof car);
 // ** if we print the type of the null variable we can see that it will return and type of object
 // ** but object is not a primitive type,  according to MDN:
-//      In JavaScript, null is marked as one of the primitive values, because its behaviour is seemingly primitive.
+//      In JavaScript, null is marked as one of the primitive values, because its behavior is seemingly primitive.
 //      But in certain cases, null is not as "primitive" as it first seems! Every Object is derived from null value, and therefore typeof operator returns object for it.
 
 // ? undefined
